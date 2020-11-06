@@ -73,6 +73,15 @@ final class HttpRequest implements Runnable
         sendBytes(fis, outStream);
         fis.close();
 
+        System.out.println("*****");
+        System.out.println(fileName);//print out file request to console
+        System.out.println("*****");
+        // Get and display the header lines.
+        String headerLine = null;
+        while ((headerLine = br.readLine()).length() != 0) {
+            System.out.println(headerLine);
+        }
+
         // Close streams and socket.
         outStream.close();
         br.close();
